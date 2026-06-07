@@ -20,8 +20,9 @@ export const authOptions: NextAuthOptions = {
 
         if (error || !data.user) return null
 
-        // Solo l'admin può accedere
-        if (data.user.email !== process.env.ADMIN_EMAIL) return null
+        // Solo gli admin possono accedere
+        const adminEmails = (process.env.ADMIN_EMAIL ?? '').split(',').map(e => e.trim())
+        if (!data.user.email || !adminEmails.includes(data.user.email)) return null
 
         return {
           id: data.user.id,
