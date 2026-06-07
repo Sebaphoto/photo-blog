@@ -4,44 +4,61 @@
 
 :root {
   --font-inter: 'Inter', sans-serif;
+  --font-cormorant: 'Cormorant Garamond', Georgia, serif;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
 body {
-  background-color: #0f0f0f;
-  color: #e8e0d0;
+  background-color: #04040a;
+  color: #ffffff;
+  font-family: var(--font-inter);
 }
 
 /* Masonry grid */
 .masonry-grid {
   display: flex;
-  margin-left: -12px;
+  margin-left: -10px;
   width: auto;
 }
 .masonry-grid-col {
-  padding-left: 12px;
+  padding-left: 10px;
   background-clip: padding-box;
 }
 .masonry-grid-col > div {
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
 /* Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #0f0f0f;
-}
-::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 3px;
-}
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #04040a; }
+::-webkit-scrollbar-thumb { background: #1a1a2e; border-radius: 2px; }
 
 /* Photo hover */
-.photo-card:hover .photo-overlay {
-  opacity: 1;
+.photo-card:hover .photo-overlay { opacity: 1; }
+
+/* Star field background */
+.star-bg {
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 50% 10%, rgba(255,255,255,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 70% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 40%, rgba(255,255,255,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 90%, rgba(255,255,255,0.2) 0%, transparent 100%),
+    radial-gradient(1px 1px at 80% 15%, rgba(255,255,255,0.3) 0%, transparent 100%);
+}
+
+/* Elegant serif */
+.font-serif { font-family: var(--font-cormorant); }
+
+/* Glow effect */
+.text-glow {
+  text-shadow: 0 0 40px rgba(168, 196, 224, 0.3);
+}
+
+/* Gold line */
+.gold-line {
+  background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+  height: 1px;
 }

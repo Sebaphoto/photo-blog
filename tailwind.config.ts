@@ -10,12 +10,15 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],
+        serif: ['var(--font-cormorant)', 'Georgia', 'serif'],
       },
       colors: {
-        surface: '#0f0f0f',
-        card: '#1a1a1a',
-        border: '#2a2a2a',
-        accent: '#e8e0d0',
+        surface: '#04040a',
+        card: '#0c0c18',
+        border: '#1a1a2e',
+        accent: '#ffffff',
+        gold: '#c9a84c',
+        star: '#a8c4e0',
       },
     },
   },

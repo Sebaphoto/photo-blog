@@ -2,36 +2,35 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Camera, LogIn, LayoutDashboard } from 'lucide-react'
 
 export default function Navbar() {
   const pathname = usePathname()
   const isAdmin = pathname?.startsWith('/admin')
 
   return (
-    <header className="border-b border-border sticky top-0 z-50 backdrop-blur-sm bg-surface/90">
-      <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-wide hover:opacity-70 transition-opacity">
-          <Camera size={18} />
-          <span>archivio</span>
+    <header className="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-border">
+      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+        <Link href="/" className="group flex items-center gap-3">
+          <span className="text-star text-lg">✦</span>
+          <span className="font-serif text-xl font-light tracking-[0.15em] text-white group-hover:text-star transition-colors">
+            SEBAS NIGHTSKY
+          </span>
         </Link>
 
-        <nav className="flex items-center gap-4 text-sm">
+        <nav className="flex items-center gap-8 text-xs tracking-[0.2em] uppercase">
           <Link
             href="/"
-            className={`hover:opacity-70 transition-opacity ${pathname === '/' ? 'opacity-100' : 'opacity-50'}`}
+            className={`transition-colors ${pathname === '/' ? 'text-white' : 'text-white/40 hover:text-white/80'}`}
           >
-            galleria
+            Galleria
           </Link>
           {isAdmin ? (
-            <Link href="/admin" className="flex items-center gap-1 opacity-70 hover:opacity-100 transition-opacity">
-              <LayoutDashboard size={14} />
-              admin
+            <Link href="/admin" className="text-gold hover:text-gold/80 transition-colors">
+              Admin
             </Link>
           ) : (
-            <Link href="/login" className="flex items-center gap-1 opacity-50 hover:opacity-100 transition-opacity">
-              <LogIn size={14} />
-              accedi
+            <Link href="/login" className="text-white/40 hover:text-white/80 transition-colors">
+              Accedi
             </Link>
           )}
         </nav>
