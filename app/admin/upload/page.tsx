@@ -59,9 +59,9 @@ export default function UploadPage() {
   async function uploadFile(file: File): Promise<string> {
     const ext = file.name.split('.').pop()
     const name = `${Date.now()}-${Math.random().toString(36).slice(2)}.${ext}`
-    const { error } = await supabase.storage.from('photos').upload(name, file)
+    const { error } = await supabase.storage.from('Photos').upload(name, file)
     if (error) throw error
-    const { data } = supabase.storage.from('photos').getPublicUrl(name)
+    const { data } = supabase.storage.from('Photos').getPublicUrl(name)
     return data.publicUrl
   }
 
